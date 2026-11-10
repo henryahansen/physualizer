@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "kind": "sr-1d",
+  "title": "Twin paradox",
+  "units": "yr-ly",
+  "frames": [
+    { "id": "earth", "label": "Earth", "beta": 0 },
+    { "id": "outbound", "label": "Outbound ship", "beta": 0.8 }
+  ],
+  "events": [
+    { "id": "depart", "label": "Departure", "t": 0, "x": 0 },
+    { "id": "turn", "label": "Turnaround", "t": 5, "x": 4 },
+    { "id": "reunion", "label": "Reunion", "t": 10, "x": 0 }
+  ],
+  "worldlines": [
+    { "id": "home", "label": "Home twin", "through": ["depart", "reunion"] },
+    { "id": "ship", "label": "Travelling twin", "through": ["depart", "turn", "reunion"] }
+  ],
+  "signals": [],
+  "rods": [],
+  "annotations": [],
+  "view": {
+    "frame": "earth",
+    "beta": 0,
+    "center": { "t": 5, "x": 2 },
+    "zoom": 1,
+    "overlays": ["lightCones", "properTimeTicks"]
+  }
+}

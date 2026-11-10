@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "sr-1d",
+  "title": "Blank diagram",
+  "units": "ns-ft",
+  "frames": [{ "id": "base", "label": "Base frame", "beta": 0 }],
+  "events": [],
+  "worldlines": [],
+  "signals": [],
+  "rods": [],
+  "annotations": [],
+  "view": {
+    "frame": "base",
+    "beta": 0,
+    "center": { "t": 0, "x": 0 },
+    "zoom": 1,
+    "overlays": []
+  }
+}

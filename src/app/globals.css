@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens. Tailwind turns each --color-*, --font-* and --spacing-* below
+ * into utility classes (text-ink, bg-paper, font-serif, w-panel-left, ...).
+ *
+ * The "initial" lines delete Tailwind's built-in palette, fonts, rounded
+ * corners and shadows, so the only styles that exist are the ones the PRD
+ * allows. A class like bg-blue-500 or rounded-lg simply does nothing.
+ */
+@theme {
+  --color-*: initial;
+  --font-*: initial;
+  --radius-*: initial;
+  --shadow-*: initial;
+
+  /* Chrome: black on white. Grey only for disabled text. */
+  --color-ink: #000;
+  --color-paper: #fff;
+  --color-disabled: #767676;
+  --font-serif: "Times New Roman", Times, serif;
+
+  /* Visuals: colour lives only inside the diagram and animation. */
+  --color-grid: #ddd;
+  --color-light: #e69f00; /* light signals and light cones, always dashed */
+  /* Okabe-Ito colourblind-safe palette, assigned to objects in this order. */
+  --color-object-1: #0072b2;
+  --color-object-2: #d55e00;
+  --color-object-3: #009e73;
+  --color-object-4: #cc79a7;
+  --color-object-5: #56b4e9;
+
+  /* Workspace layout at 1024px and wider. */
+  --spacing-panel-left: 280px;
+  --spacing-panel-right: 300px;
+  --spacing-strip: 120px;
+}
+
+@layer base {
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-serif);
+  }
+
+  /* Tailwind's reset removes link underlines; the PRD wants them back. */
+  a {
+    text-decoration: underline;
+  }
+
+  /* Buttons are words in a 1px black border. */
+  button {
+    border: 1px solid var(--color-ink);
+    padding: 0.125rem 0.5rem;
+  }
+
+  button:disabled {
+    color: var(--color-disabled);
+    border-color: var(--color-disabled);
+  }
+}
